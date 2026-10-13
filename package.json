@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "prod": "bun src/index.ts",
+    "pull": "git pull",
+
+    "start": "pm2 delete vps-web; pm2 start ecosystem.config.js && pm2 save && pm2 logs vps-web",
+    "restart": "pm2 restart vps-web --update-env && pm2 save",
+    "stop": "pm2 stop vps-web && pm2 save"
+  },
+
+
+  "name": "vps-alfon-dev",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}
